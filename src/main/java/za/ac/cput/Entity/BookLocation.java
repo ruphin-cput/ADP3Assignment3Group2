@@ -4,7 +4,7 @@ package za.ac.cput.Entity;
  * bookLocation.java
  * This code represents an entity using the builder pattern
  * @author: Melven Johannes Booysen (219201277)
- * Date: 10 May 2021
+ * Date: 10 June 2021
  */
 
 public class BookLocation
