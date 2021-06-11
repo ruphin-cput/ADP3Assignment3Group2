@@ -1,7 +1,10 @@
 package za.ac.cput.Entity;
 
-import java.util.ArrayList;
-import java.util.Arrays;
+/*  Book.java
+    Book entity
+    Author: Taahir Boltman(218022972)
+    Date: 10 June 2021
+ */
 
 public class Book {
     private String bookId, shelfNumber, authorName, name, desc, keywords;
