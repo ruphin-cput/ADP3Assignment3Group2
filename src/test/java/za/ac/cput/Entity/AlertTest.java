@@ -1,7 +1,14 @@
+/* Alert.java
+   Entity for AlertTest
+   Author: Melisa Bhixa (217131085)
+   Date: 11 June 2021
+ */
+
 package za.ac.cput.Entity;
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
+
+import org.junit.jupiter.api.Assert;
+import org.junit.jupiter.api.Before;
+import org.junit.jupiter.api.Test;
 
 import java.util.UUID;
 

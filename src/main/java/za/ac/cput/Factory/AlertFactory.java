@@ -1,3 +1,9 @@
+/* Alert.java
+   Factory for Alert
+   Author: Melisa Bhixa (217131085)
+   Date: 11 June 2021
+ */
+
 package za.ac.cput.Factory;
 
 import za.ac.cput.Entity.Alert;

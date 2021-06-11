@@ -1,10 +1,16 @@
+/* Alert.java
+   Entity for AlertTypeTest
+   Author: Melisa Bhixa (217131085)
+   Date: 11 June 2021
+ */
+
 package za.ac.cput.Entity;
 
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.Assert;
+import org.junit.jupiter.api.Before;
+import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assert.*;
 
 public class AlertTypeTest {
     private AlertType alertType;
