@@ -1,5 +1,5 @@
 package za.ac.cput.Entity;
-/**
+/*
  * Genre.java
  * This code represents an entity using the builder pattern
  * @author Plamedie Bitota Bukasa (219260532)
