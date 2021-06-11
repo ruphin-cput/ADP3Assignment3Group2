@@ -1,10 +1,16 @@
 package za.ac.cput.Entity;
 
-public class userLogin {
+/*  UserLogin.java
+    User Login entity
+    Author: Taahir Boltman(218022972)
+    Date: 10 June 2021
+ */
+
+public class UserLogin {
     private String userId, userName, password;
 
 
-    private userLogin(Builder builder) {
+    private UserLogin(Builder builder) {
         this.userId = builder.userId;
         this.userName = builder.userName;
         this.password = builder.password;
@@ -12,7 +18,7 @@ public class userLogin {
 
     @Override
     public String toString() {
-        return "userLogin{" +
+        return "UserLogin{" +
                 "userId='" + userId + '\'' +
                 ", userName='" + userName + '\'' +
                 ", password='" + password + '\'' +
@@ -37,14 +43,14 @@ public class userLogin {
             return this;
         }
 
-        public userLogin build(){
-            return new userLogin(this);
+        public UserLogin build(){
+            return new UserLogin(this);
         }
     }
 
 
 
-    public userLogin copy(userLogin user){
+    public UserLogin copy(UserLogin user){
         this.userId = user.userId;
         this.userName = user.userName;
         this.password = user.password;
