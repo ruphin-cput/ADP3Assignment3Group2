@@ -1,7 +1,6 @@
 /* Alert.java
    Entity for AlertType
-   Author: Melisa Bhixa
-   Student No: 217131085
+   Author: Melisa Bhixa ( 217131085)
    Date: 11 June 2021
  */
 
