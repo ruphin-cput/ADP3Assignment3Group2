@@ -7,10 +7,7 @@ package za.ac.cput.entity;
 public class Role {
 
     private String roleID, name, description;
-    // 25-07 | Assignment feedback : "No getters in entities. userId, roleId should NOT be generated in UserRoleFactory."
-
-    private Role(){};
-
+    private Role(){}
     private Role(Builder builder) {
         this.roleID = builder.roleID;
         this.name = builder.name;
@@ -41,8 +38,6 @@ public class Role {
             this.description = description;
             return this;
         }
-
-
 
         public Role build() {
             return new Role(this);

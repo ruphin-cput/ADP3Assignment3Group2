@@ -21,14 +21,8 @@ class UserRoleFactoryTest {
     @Test
     public void createUserRole(){
 
-        User user1 = UserFactory.createUser("Heitor","Villa-Lobos","0713325511","villalobos@guitarist.com","That Street");
-        Role role1 = RoleFactory.createRole("student",null);
-        userRole1 = UserRoleFactory.createUserRole(user1,role1);
-
-        User user2 = UserFactory.createUser("Astor","Piazolla","0711028701","astor@guitarist.com","That other Street");
-        Role role2 = RoleFactory.createRole("student",null);
-        userRole2 = UserRoleFactory.createUserRole(user2,role2);
-
+        userRole1 = UserRoleFactory.createUserRole();
+        userRole2 = UserRoleFactory.createUserRole();
         System.out.println(userRole1);
         System.out.println(userRole2);
         assertNotNull(userRole1);

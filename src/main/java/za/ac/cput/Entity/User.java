@@ -7,7 +7,6 @@ package za.ac.cput.entity;
 public class User {
 
     private String userID, name, surname, cellphone, email, address;
-
     private User(){}
     // 25-07 | Assignment feedback : "No getters in entities. userId, roleId should NOT be generated in UserRoleFactory."
     private User(Builder builder){

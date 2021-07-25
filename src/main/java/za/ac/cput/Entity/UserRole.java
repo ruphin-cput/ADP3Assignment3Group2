@@ -6,7 +6,7 @@ package za.ac.cput.entity;
  */
 public class UserRole {
 
-    private String userID, roleID;
+    private String userID, roleID, userRoleID;
     // 25-07 | Assignment feedback : "No getters in entities. userId, roleId should NOT be generated in UserRoleFactory."
 
     private UserRole(){}
@@ -14,15 +14,16 @@ public class UserRole {
     private UserRole(Builder builder){
         this.userID = builder.userID;
         this.roleID = builder.roleID;
+        this.userRoleID = builder.userRoleID;
 
     }
 
-    public String getUserID() {   return userID;   }
-
-    public String getRoleID() {    return roleID;   }
+    public String getUserRoleID() {
+        return userRoleID;
+    }
 
     public static class Builder{
-        private String userID, roleID;
+        private String userID, roleID,userRoleID;
         public Builder setUserID(String userID){
             this.userID = userID;
             return this;
@@ -30,6 +31,11 @@ public class UserRole {
 
         public Builder setRoleID(String roleID){
             this.roleID = roleID;
+            return this;
+        }
+
+        public Builder setUserRoleID(String userRoleID){
+            this.userRoleID = userRoleID;
             return this;
         }
 
@@ -41,6 +47,7 @@ public class UserRole {
         public Builder copy(UserRole userRole){
             this.userID = userRole.userID;
             this.roleID =  userRole.roleID;
+            this.userRoleID = userRole.userRoleID;
 
             return this;
         }
@@ -52,6 +59,7 @@ public class UserRole {
         return "UserRole{" +
                 "userID='" + userID + '\'' +
                 ", roleID='" + roleID + '\'' +
+                ", userRoleID='" + userRoleID + '\'' +
                 '}';
     }
 }
