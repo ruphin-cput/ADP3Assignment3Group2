@@ -20,9 +20,6 @@ public class User {
 
     }
 
-    //public String getUserID(){return userID; };
-
-
     public String getUserID() { return userID;   }
 
     public String getName() {   return name;   }
@@ -64,8 +61,6 @@ public class User {
             this.address = address;
             return this;
         }
-
-
 
         public User build(){
             return new User(this);
