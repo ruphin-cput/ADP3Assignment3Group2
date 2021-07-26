@@ -1,12 +1,15 @@
-package za.ac.cput.repository;
-/*  IRepository.java
-    Repository interface
-    Author: Adriaan Burger(219014868)
-    Date: 25 July 2021
- */
-public interface IRepository <T, ID>{
-    public T create(T t);
-    public T read(ID id);
-    public T update(T t);
-    public boolean delete(ID id);
+package za.ac.cput.Repository;
+
+import za.ac.cput.Entity.Book;
+
+public interface IRepository<C,cd> {
+public String cd = null;
+
+    public C Create(C c);
+
+    public C Read(cd CD);
+
+    public C Update(C c);
+
+    public boolean Delete(cd CD);
 }
