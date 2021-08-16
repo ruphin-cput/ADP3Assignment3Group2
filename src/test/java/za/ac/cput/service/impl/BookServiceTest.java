@@ -1,9 +1,9 @@
-package za.ac.cput.ServiceTest;
+package za.ac.cput.service.impl;
 
 import org.junit.jupiter.api.Test;
-import za.ac.cput.Entity.Book;
-import za.ac.cput.Factory.BookFac;
-import za.ac.cput.Service.impl.BookService;
+import za.ac.cput.entity.Book;
+import za.ac.cput.factory.BookFac;
+import za.ac.cput.service.impl.BookService;
 
 import static org.junit.jupiter.api.Assertions.*;
 

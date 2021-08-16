@@ -16,6 +16,18 @@ public class UserLogin {
         this.password = builder.password;
     }
 
+    public String getUserId() {
+        return userId;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
     @Override
     public String toString() {
         return "UserLogin{" +
@@ -46,15 +58,17 @@ public class UserLogin {
         public UserLogin build(){
             return new UserLogin(this);
         }
+
+        public Builder copy(UserLogin user){
+            this.userId = user.userId;
+            this.userName = user.userName;
+            this.password = user.password;
+            return this;
+        }
     }
 
 
 
-    public UserLogin copy(UserLogin user){
-        this.userId = user.userId;
-        this.userName = user.userName;
-        this.password = user.password;
-        return this;
-    }
+
 }
 

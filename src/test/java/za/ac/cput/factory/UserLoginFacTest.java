@@ -10,7 +10,6 @@ import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Timeout;
 import za.ac.cput.entity.UserLogin;
-import za.ac.cput.factory.UserLoginFac;
 
 import java.util.concurrent.TimeUnit;
 

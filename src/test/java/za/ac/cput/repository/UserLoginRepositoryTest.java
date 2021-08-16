@@ -1,11 +1,10 @@
-package za.ac.cput.RepositoryTest;
+package za.ac.cput.repository;
 
 
 import org.junit.jupiter.api.Test;
-import za.ac.cput.Entity.Book;
-import za.ac.cput.Entity.UserLogin;
-import za.ac.cput.Factory.UserLoginFac;
-import za.ac.cput.Repository.UserLoginRepository;
+import za.ac.cput.entity.UserLogin;
+import za.ac.cput.factory.UserLoginFac;
+import za.ac.cput.repository.UserLoginRepository;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -15,14 +14,14 @@ public class UserLoginRepositoryTest {
 
     @Test
     void u_create(){
-        UserLogin created = repository.Create(uLogin);
+        UserLogin created = repository.create(uLogin);
         assertEquals(created.getUserId(),uLogin.getUserId());
         System.out.println("Created: " + created);
     }
 
     @Test
     void u_read(){
-        UserLogin read = repository.Read(uLogin.getUserId());
+        UserLogin read = repository.read(uLogin.getUserId());
         assertNotNull(read);
         System.out.println("Read: " + read);
     }
@@ -30,13 +29,13 @@ public class UserLoginRepositoryTest {
     @Test
     void u_update(){
         UserLogin updated = new UserLogin.Builder().copy(uLogin).setUserName("ASB").build();
-        assertEquals(updated,repository.Update(updated));
+        assertEquals(updated,repository.update(updated));
         System.out.println("Updated: " + updated);
     }
 
     @Test
     void delete(){
-        boolean success = repository.Delete(uLogin.getUserId());
+        boolean success = repository.delete(uLogin.getUserId());
         assertTrue(success);
         System.out.println("Deleted: " + success);
     }

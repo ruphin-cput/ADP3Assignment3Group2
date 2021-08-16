@@ -1,15 +1,9 @@
-package za.ac.cput.Repository;
+package za.ac.cput.repository;
 
-import za.ac.cput.Entity.Book;
-
-public interface IRepository<C,cd> {
-public String cd = null;
-
-    public C Create(C c);
-
-    public C Read(cd CD);
-
-    public C Update(C c);
-
-    public boolean Delete(cd CD);
+public interface IRepository<T,ID>
+{
+    public T create(T t);
+    public T read(ID id);
+    public T update(T t);
+    public boolean delete(ID id);
 }

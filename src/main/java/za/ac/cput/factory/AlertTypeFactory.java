@@ -4,10 +4,9 @@
    Date: 11 June 2021
  */
 
-package za.ac.cput.Factory;
+package za.ac.cput.factory;
 
-import za.ac.cput.Entity.Alert;
-import za.ac.cput.Entity.AlertType;
+import za.ac.cput.entity.AlertType;
 
 public class AlertTypeFactory {
 

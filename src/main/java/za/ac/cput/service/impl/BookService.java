@@ -1,7 +1,7 @@
-package za.ac.cput.Service.impl;
+package za.ac.cput.service.impl;
 
-import za.ac.cput.Entity.Book;
-import za.ac.cput.Repository.BookRepository;
+import za.ac.cput.entity.Book;
+import za.ac.cput.repository.BookRepository;
 
 import java.util.*;
 
@@ -20,22 +20,22 @@ public class BookService implements IBookService{
 
     @Override
     public Book create(Book book) {
-        return this.repository.Create(book);
+        return this.repository.create(book);
     }
 
     @Override
     public Book read(String s) {
-        return this.repository.Read(s);
+        return this.repository.read(s);
     }
 
     @Override
     public Book update(Book book) {
-        return this.repository.Update(book);
+        return this.repository.update(book);
     }
 
     @Override
     public boolean delete(String s) {
-        return this.repository.Delete(s);
+        return this.repository.delete(s);
     }
 
     @Override

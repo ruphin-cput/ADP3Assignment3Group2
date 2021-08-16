@@ -1,10 +1,8 @@
-package za.ac.cput.RepositoryTest;
+package za.ac.cput.repository;
 
 import org.junit.jupiter.api.Test;
-import za.ac.cput.Entity.Book;
-import za.ac.cput.Factory.BookFac;
-import za.ac.cput.Repository.BookRepository;
-
+import za.ac.cput.entity.Book;
+import za.ac.cput.factory.BookFac;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -14,14 +12,14 @@ public class BookRepositoryTest {
 
     @Test
     void create(){
-        Book created = repository.Create(book);
+        Book created = repository.create(book);
         assertEquals(created.getBookId(),book.getBookId());
         System.out.println("Created: " + created);
     }
 
     @Test
     void read(){
-        Book read = repository.Read(book.getBookId());
+        Book read = repository.read(book.getBookId());
         assertNotNull(read);
         System.out.println("Read: " + read);
     }
@@ -29,13 +27,13 @@ public class BookRepositoryTest {
     @Test
     void update(){
         Book updated = new Book.bookBuilder().copy(book).setDesc("Many many stars").build();
-        assertEquals(updated,repository.Update(updated));
+        assertEquals(updated,repository.update(updated));
         System.out.println("Updated: " + updated);
     }
 
     @Test
     void delete(){
-        boolean fail = repository.Delete(book.getBookId());
+        boolean fail = repository.delete(book.getBookId());
         assertFalse(fail);
         System.out.println("Deleted: " + fail);
     }

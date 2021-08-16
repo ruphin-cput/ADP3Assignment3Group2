@@ -1,7 +1,6 @@
-package za.ac.cput.Repository;
+package za.ac.cput.repository;
 
-import za.ac.cput.Entity.Book;
-import za.ac.cput.Entity.UserLogin;
+import za.ac.cput.entity.UserLogin;
 
 import java.util.HashSet;
 import java.util.*;
@@ -22,7 +21,7 @@ public class UserLoginRepository implements IUserLoginRepository{
     }
 
     @Override
-    public UserLogin Create(UserLogin userLogin) {
+    public UserLogin create(UserLogin userLogin) {
         boolean success = userloginDB.add(userLogin);
         if(!success)
             return null;
@@ -30,7 +29,7 @@ public class UserLoginRepository implements IUserLoginRepository{
     }
 
     @Override
-    public UserLogin Read(String userId) {
+    public UserLogin read(String userId) {
         for(UserLogin u: userloginDB)
         {
             if(u.getUserId().equals(userId)){
@@ -41,8 +40,8 @@ public class UserLoginRepository implements IUserLoginRepository{
     }
 
     @Override
-    public UserLogin Update(UserLogin userLogin) {
-        UserLogin oldUser = Read(userLogin.getUserId());
+    public UserLogin update(UserLogin userLogin) {
+        UserLogin oldUser = read(userLogin.getUserId());
         if(oldUser != null) {
             userloginDB.remove(oldUser);
             userloginDB.add(userLogin);
@@ -52,8 +51,8 @@ public class UserLoginRepository implements IUserLoginRepository{
     }
 
     @Override
-    public boolean Delete(String userId) {
-        UserLogin UsertoDelete = Read(userId);
+    public boolean delete(String userId) {
+        UserLogin UsertoDelete = read(userId);
         if(UsertoDelete == null)
         return false;
         userloginDB.remove(UsertoDelete);

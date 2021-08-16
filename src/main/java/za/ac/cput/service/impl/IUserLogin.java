@@ -1,7 +1,7 @@
-package za.ac.cput.Service.impl;
+package za.ac.cput.service.impl;
 
-import za.ac.cput.Entity.UserLogin;
-import za.ac.cput.Service.IService;
+import za.ac.cput.entity.UserLogin;
+import za.ac.cput.service.IService;
 
 import java.util.*;
 

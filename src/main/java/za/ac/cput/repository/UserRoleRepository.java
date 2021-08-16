@@ -1,7 +1,6 @@
 package za.ac.cput.repository;
 
-import za.ac.cput.Entity.Role;
-import za.ac.cput.Entity.UserRole;
+import za.ac.cput.entity.UserRole;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -35,31 +34,35 @@ public class UserRoleRepository implements IUserRoleRepository {
     }
 
     @Override
-    public UserRole read(String userRoleID) {
-        for(UserRole ur: userRoleDB)
-        {
-            if(ur.getUserRoleID().equals(userRoleID)){
-                return ur;
-            }
-        }
-        return null;
-
+    public UserRole read(String userID) {
+        UserRole userRole = userRoleDB.stream()
+                .filter(e -> e.getUserID().equals(userID))
+                .findAny()
+                .orElse(null);
+        return userRole;
+//        for(UserRole ur: userRoleDB)
+//        {
+//            if(ur.getUserRoleID().equals(userRoleID)){
+//                return ur;
+//            }
+//        }
+//        return null;
     }
 
     @Override
     public UserRole update(UserRole userRole) {
-        UserRole oldUserRole = read(userRole.getUserRoleID());
+        UserRole oldUserRole = read(userRole.getUserID());
         if(oldUserRole != null) {
             userRoleDB.remove(oldUserRole);
             userRoleDB.add(userRole);
             return userRole;
         }
-        return userRole;
+        return null;
     }
 
     @Override
-    public boolean delete(String userRoleID) {
-        UserRole userRoleToDelete = read(userRoleID);
+    public boolean delete(String userID) {
+        UserRole userRoleToDelete = read(userID);
         if(userRoleToDelete == null)
             return false;
         userRoleDB.remove(userRoleToDelete);
@@ -68,6 +71,6 @@ public class UserRoleRepository implements IUserRoleRepository {
 
     @Override
     public Set<UserRole> getAll() {
-        return null;
+        return userRoleDB;
     }
 }

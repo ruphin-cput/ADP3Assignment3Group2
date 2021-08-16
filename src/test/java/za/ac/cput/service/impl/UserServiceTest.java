@@ -1,10 +1,10 @@
-package za.ac.cput.Service.impl;
+package za.ac.cput.service.impl;
 
 import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
-import za.ac.cput.Entity.User;
-import za.ac.cput.Factory.UserFactory;
+import za.ac.cput.entity.User;
+import za.ac.cput.factory.UserFactory;
 
 import static org.junit.jupiter.api.Assertions.*;
 /*  UserServiceTest.java

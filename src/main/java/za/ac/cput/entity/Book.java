@@ -8,8 +8,7 @@ package za.ac.cput.entity;
 
 public class Book {
     private String bookId, shelfNumber, authorName, name, desc, keywords;
-
-
+    private Book(){}
     private Book(bookBuilder bookBuilder) {
         this.bookId= bookBuilder.bookId;
         this.shelfNumber= bookBuilder.shelfNumber;
@@ -17,6 +16,30 @@ public class Book {
         this.name= bookBuilder.name;
         this.desc= bookBuilder.desc;
         this.keywords= bookBuilder.keywords;
+    }
+
+    public String getBookId() {
+        return bookId;
+    }
+
+    public String getShelfNumber() {
+        return shelfNumber;
+    }
+
+    public String getAuthorName() {
+        return authorName;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getDesc() {
+        return desc;
+    }
+
+    public String getKeywords() {
+        return keywords;
     }
 
     @Override
@@ -33,6 +56,7 @@ public class Book {
 
     public static class bookBuilder{
         private String bookId, shelfNumber, authorName, name, desc, keywords;
+
 
         public bookBuilder setBookId(String bookId) {
             this.bookId = bookId;
@@ -67,17 +91,17 @@ public class Book {
         public Book build() {
             return new Book(this);
         }
+
+        public bookBuilder copy(Book book) {
+            this.bookId= book.bookId;
+            this.shelfNumber= book.shelfNumber;
+            this.authorName= book.authorName;
+            this.name= book.name;
+            this.desc= book.desc;
+            this.keywords= book.keywords;
+            return this;
+        }
     }
 
-    public Book copy(Book book){
-        this.bookId= book.bookId;
-        this.shelfNumber= book.shelfNumber;
-        this.authorName= book.authorName;
-        this.name= book.name;
-        this.desc= book.desc;
-        this.keywords= book.keywords;
-
-        return this;
-    }
 
 }

@@ -1,4 +1,4 @@
-package za.ac.cput.Service;
+package za.ac.cput.service;
 /*  IService.java
     Service interface
     Author: Adriaan Burger(219014868)

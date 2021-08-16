@@ -1,6 +1,6 @@
-package za.ac.cput.Repository;
+package za.ac.cput.repository;
 
-import za.ac.cput.Entity.Book;
+import za.ac.cput.entity.Book;
 import java.util.*;
 
 public class BookRepository implements IBookRepository{
@@ -24,7 +24,7 @@ public class BookRepository implements IBookRepository{
     }
 
     @Override
-    public Book Create(Book book) {
+    public Book create(Book book) {
         boolean success = bookDB.add(book);
         if(!success)
             return null;
@@ -32,7 +32,7 @@ public class BookRepository implements IBookRepository{
     }
 
     @Override
-    public Book Read(String bookId) {
+    public Book read(String bookId) {
         for(Book b: bookDB)
         {
             if(b.getBookId().equals(bookId)){
@@ -43,8 +43,8 @@ public class BookRepository implements IBookRepository{
     }
 
     @Override
-    public Book Update(Book book) {
-        Book oldBook = Read(book.getBookId());
+    public Book update(Book book) {
+        Book oldBook = read(book.getBookId());
         if(oldBook != null) {
             bookDB.remove(oldBook);
             bookDB.add(book);
@@ -56,8 +56,8 @@ public class BookRepository implements IBookRepository{
 
 
     @Override
-    public boolean Delete(String bookId) {
-        Book bookToDelete = Read(bookId);
+    public boolean delete(String bookId) {
+        Book bookToDelete = read(bookId);
         if(bookToDelete == null)
         return false;
         bookDB.remove(bookToDelete);

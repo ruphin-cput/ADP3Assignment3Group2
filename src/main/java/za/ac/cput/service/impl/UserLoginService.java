@@ -1,7 +1,7 @@
-package za.ac.cput.Service.impl;
+package za.ac.cput.service.impl;
 
-import za.ac.cput.Entity.UserLogin;
-import za.ac.cput.Repository.UserLoginRepository;
+import za.ac.cput.entity.UserLogin;
+import za.ac.cput.repository.UserLoginRepository;
 
 import java.util.*;
 
@@ -20,22 +20,22 @@ public class UserLoginService implements IUserLogin{
 
     @Override
     public UserLogin create(UserLogin userLogin) {
-        return this.repository.Create(userLogin);
+        return this.repository.create(userLogin);
     }
 
     @Override
     public UserLogin read(String s) {
-        return this.repository.Read(s);
+        return this.repository.read(s);
     }
 
     @Override
     public UserLogin update(UserLogin userLogin) {
-        return this.repository.Update(userLogin);
+        return this.repository.update(userLogin);
     }
 
     @Override
     public boolean delete(String s) {
-        return this.repository.Delete(s);
+        return this.repository.delete(s);
     }
 
     @Override

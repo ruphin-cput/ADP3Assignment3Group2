@@ -16,6 +16,8 @@ import static org.junit.jupiter.api.Assertions.*;
     Author: Adriaan Burger(219014868)
     Date: 11 June 2021
  */
+
+/*
 class UserRoleFactoryTest {
     private UserRole userRole1, userRole2;
     @Test
@@ -54,3 +56,5 @@ class UserRoleFactoryTest {
 
 
 }
+
+ */

@@ -1,6 +1,6 @@
-package za.ac.cput.Service.impl;
+package za.ac.cput.service.impl;
 
-import za.ac.cput.Entity.Role;
+import za.ac.cput.entity.Role;
 import za.ac.cput.repository.RoleRepository;
 
 import java.util.Set;
