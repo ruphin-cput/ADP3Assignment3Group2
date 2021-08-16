@@ -1,5 +1,6 @@
 package za.ac.cput.service.impl;
 
+import org.springframework.stereotype.Service;
 import za.ac.cput.entity.User;
 import za.ac.cput.repository.UserRepository;
 
@@ -9,6 +10,7 @@ import java.util.Set;
     Author: Adriaan Burger(219014868)
     Date: 27 July 2021
  */
+@Service
 public class UserService implements IUserService{
     private static UserService service = null;
     private UserRepository repository = null;

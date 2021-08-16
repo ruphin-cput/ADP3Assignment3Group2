@@ -1,5 +1,6 @@
 package za.ac.cput.service.impl;
 
+import org.springframework.stereotype.Service;
 import za.ac.cput.entity.Role;
 import za.ac.cput.repository.RoleRepository;
 
@@ -10,6 +11,7 @@ import java.util.Set;
     Author: Adriaan Burger(219014868)
     Date: 27 July 2021
  */
+@Service
 public class RoleService implements IRoleService{
     private static RoleService service = null;
     private RoleRepository repository = null;
