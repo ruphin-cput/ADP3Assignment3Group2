@@ -1,13 +1,19 @@
 package za.ac.cput.entity;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
 /*  User.java
     Entity for the User
     Author: Adriaan Burger(219014868)
     Date: 10 June 2021
  */
+@Entity
 public class User {
-
-    private String userID, name, surname, cellphone, email, address;
-    private User(){}
+    @Id
+    private String userID;
+    private String name, surname, cellphone, email, address;
+    public User(){}
     // 25-07 | Assignment feedback : "No getters in entities. userId, roleId should NOT be generated in UserRoleFactory."
     private User(Builder builder){
         this.userID = builder.userID;

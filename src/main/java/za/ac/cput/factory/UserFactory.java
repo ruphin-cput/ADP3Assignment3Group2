@@ -30,6 +30,5 @@ public class UserFactory {
                 .setAddress(address)
                 .build();
         return user;
-
     }
 }

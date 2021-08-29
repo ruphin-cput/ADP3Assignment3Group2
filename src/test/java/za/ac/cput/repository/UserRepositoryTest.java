@@ -12,8 +12,11 @@ import static org.junit.jupiter.api.Assertions.*;
     Author: Adriaan Burger(219014868)
     Date: 25 July 2021
  */
+
 @TestMethodOrder(MethodOrderer.MethodName.class)
+@Deprecated
 public class UserRepositoryTest {
+    /*
     private static UserRepository repository = UserRepository.getRepository();
     private static User user = UserFactory.createUser("R2D2","Droid","001110010","thedroids@youarelook.ing.for","Not That Planet");
 
@@ -50,4 +53,5 @@ public class UserRepositoryTest {
         assertTrue(success);
         System.out.println("Deleted: " + success);
     }
+     */
 }

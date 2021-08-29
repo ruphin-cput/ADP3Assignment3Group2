@@ -1,5 +1,7 @@
 package za.ac.cput.repository;
 
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 import za.ac.cput.entity.User;
 
 import java.util.Set;
@@ -9,7 +11,5 @@ import java.util.Set;
     Author: Adriaan Burger(219014868)
     Date: 25 July 2021
  */
-public interface IUserRepository extends IRepository<User, String>
-{
-    public Set<User> getAll();
-}
+@Deprecated
+public interface IUserRepository{ }

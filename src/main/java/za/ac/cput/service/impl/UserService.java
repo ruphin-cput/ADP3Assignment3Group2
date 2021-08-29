@@ -1,10 +1,13 @@
 package za.ac.cput.service.impl;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import za.ac.cput.entity.User;
 import za.ac.cput.repository.UserRepository;
 
 import java.util.Set;
+import java.util.stream.Collectors;
+
 /*  UserService.java
     User Service implementation
     Author: Adriaan Burger(219014868)
@@ -12,31 +15,40 @@ import java.util.Set;
  */
 @Service
 public class UserService implements IUserService{
-    private static UserService service = null;
-    private UserRepository repository = null;
+    @Autowired
+    private UserRepository repository;
 
-    private UserService(){  this.repository = UserRepository.getRepository(); }
+    @Override
+    public User create(User user) {  return this.repository.save(user); }
 
-    public static UserService getService(){
-        if(service == null){
-            service = new UserService();
-        }
-        return service;
+    @Override
+    public User read(String userId) {
+        return this.repository
+                .findById(userId)
+                .orElse(null);
     }
 
     @Override
-    public User create(User user) {  return this.repository.create(user); }
+    public User update(User user) {
+        if(this.repository.existsById(user.getUserID()))
+            return this.repository.save(user);
+        return null;
+    }
 
     @Override
-    public User read(String userId) {  return this.repository.read(userId); }
+    public boolean delete(String userId) {
+        this.repository.deleteById(userId);
+        if(this.repository.existsById(userId))
+            return false;
+        else
+            return true;
+    }
 
     @Override
-    public User update(User user) {  return this.repository.update(user); }
-
-    @Override
-    public boolean delete(String userId) {  return this.repository.delete(userId); }
-
-    @Override
-    public Set<User> getAll() {  return this.repository.getAll(); }
-
+    public Set<User> getAll() {
+        return this.repository
+                .findAll()
+                .stream()
+                .collect(Collectors.toSet());
+    }
 }
