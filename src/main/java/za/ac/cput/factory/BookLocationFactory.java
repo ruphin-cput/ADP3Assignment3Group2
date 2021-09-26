@@ -13,10 +13,10 @@ import za.ac.cput.util.GenericHelper;
 
 public class BookLocationFactory
 {
-    public static BookLocation createBookLocation ()
+    public static BookLocation createBookLocation (String shelfLocation, String genreId)
     {
-        String genreId = GenericHelper.generateId();
-        String shelfLocation = GenericHelper.generateId();
+        genreId = GenericHelper.generateId();
+        shelfLocation = GenericHelper.generateId();
 
         //creating instance
         BookLocation bookLocation = new BookLocation.Builder()

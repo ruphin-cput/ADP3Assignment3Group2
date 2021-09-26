@@ -20,7 +20,7 @@ class BookLocationFactoryTest
     @Test
     public void createBookLocation()
     {
-        BookLocation bookLocation = BookLocationFactory.createBookLocation();
+        BookLocation bookLocation = BookLocationFactory.createBookLocation(" ", " ");
         System.out.println(bookLocation);
         assertEquals(bookLocation);
     }
