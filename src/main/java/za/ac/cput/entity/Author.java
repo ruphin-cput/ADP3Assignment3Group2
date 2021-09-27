@@ -7,6 +7,7 @@ package za.ac.cput.entity;
  * Date: 10 June 2021
  */
 
+//This package "entity/domain - is the blueprint part of things (skeleton)
 public class Author
 {
     private String authorId, name, surname, bio;
@@ -30,10 +31,32 @@ public class Author
                 '}';
     }
 
+    //Getters
+    public String getAuthorId()
+    {
+        return authorId;
+    }
+
+    public String getName()
+    {
+        return name;
+    }
+
+    public String getSurname()
+    {
+        return surname;
+    }
+
+    public String getBio()
+    {
+        return bio;
+    }//End of getters
+
     public static class Builder
     {
         private String  authorId, name, surname, bio;
 
+        //Setters
         public Builder setAuthorId(String authorId)
         {
             this.authorId = authorId;
@@ -56,7 +79,7 @@ public class Author
         {
             this.bio = bio;
             return this;
-        }
+        }//End of setters
 
         public Author build()
         {

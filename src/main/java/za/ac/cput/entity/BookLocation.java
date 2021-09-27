@@ -1,5 +1,6 @@
 package za.ac.cput.entity;
 
+
 /**
  * bookLocation.java
  * This code represents an entity using the builder pattern
@@ -17,10 +18,27 @@ public class BookLocation
         this.genreId = builder.genreId;
     }
 
+    //Getters
+    public String getShelfLocation()
+    {
+        return shelfLocation;
+    }
+
+    public String getGenreId()
+    {
+        return genreId;
+    }//End of getters
+
+    /*public boolean add(BookLocation bookLocation)
+    {
+
+    }*/
+
     public static class Builder
     {
         private String shelfLocation, genreId;
 
+        //Setters
         public Builder setShelfLocation(String shelfLocation)
         {
             this.shelfLocation = shelfLocation;
@@ -31,7 +49,7 @@ public class BookLocation
         {
             this.genreId = genreId;
             return this;
-        }
+        }//End of setters
 
         public BookLocation build()
         {
