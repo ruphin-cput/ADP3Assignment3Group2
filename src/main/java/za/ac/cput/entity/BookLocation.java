@@ -1,5 +1,6 @@
 package za.ac.cput.entity;
 
+
 /**
  * bookLocation.java
  * This code represents an entity using the builder pattern
@@ -49,7 +50,6 @@ public class BookLocation
             this.genreId = genreId;
             return this;
         }//End of setters
-
 
         public BookLocation build()
         {

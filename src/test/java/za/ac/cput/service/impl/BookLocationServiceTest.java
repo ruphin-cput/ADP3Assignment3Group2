@@ -12,6 +12,14 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
 import za.ac.cput.entity.BookLocation;
 import za.ac.cput.factory.BookLocationFactory;
+import org.junit.jupiter.api.MethodOrderer;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestMethodOrder;
+import za.ac.cput.entity.Author;
+import za.ac.cput.entity.BookLocation;
+import za.ac.cput.factory.AuthorFactory;
+import za.ac.cput.factory.BookLocationFactory;
+import za.ac.cput.repository.AuthorRepository;
 import za.ac.cput.repository.BookLocationRepository;
 
 import static org.junit.jupiter.api.Assertions.*;
