@@ -50,6 +50,7 @@ public class BookLocation
             return this;
         }//End of setters
 
+
         public BookLocation build()
         {
             return new BookLocation(this);

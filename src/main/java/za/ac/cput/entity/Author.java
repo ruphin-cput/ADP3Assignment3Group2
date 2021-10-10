@@ -8,6 +8,7 @@ package za.ac.cput.entity;
  */
 
 //This package "entity/domain - is the blueprint part of things (skeleton)
+
 public class Author
 {
     private String authorId, name, surname, bio;
@@ -56,6 +57,7 @@ public class Author
     {
         private String  authorId, name, surname, bio;
 
+
         //Setters
         public Builder setAuthorId(String authorId)
         {
@@ -80,6 +82,7 @@ public class Author
             this.bio = bio;
             return this;
         }//End of setters
+
 
         public Author build()
         {

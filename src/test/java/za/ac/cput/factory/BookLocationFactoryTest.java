@@ -20,7 +20,11 @@ class BookLocationFactoryTest
     @Test
     public void createBookLocation()
     {
+<<<<<<< HEAD
         BookLocation bookLocation = BookLocationFactory.createBookLocation(" ", " ");
+=======
+        BookLocation bookLocation = BookLocationFactory.createBookLocation();
+>>>>>>> 5f71e25dfbc24a5a533788550a294bb02db12b1c
         System.out.println(bookLocation);
         assertEquals(bookLocation);
     }
