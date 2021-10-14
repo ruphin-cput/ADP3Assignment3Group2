@@ -9,7 +9,7 @@ public class BookGenre
 {
     private String bookGenreId,genreId,bookId;
 
-    private BookGenre(BookGenre.Builder builder)
+    private BookGenre( Builder builder)
     {
         this.bookGenreId= builder.bookGenreId;
         this.genreId=builder.genreId;
@@ -24,6 +24,21 @@ public class BookGenre
                 ", genreId='" + genreId + '\'' +
                 ", bookId='" + bookId + '\'' +
                 '}';
+    }
+
+    public String getBookGenreId()
+    {
+        return bookGenreId;
+    }
+
+    public String getGenreId()
+    {
+        return genreId;
+    }
+
+    public String getBookId()
+    {
+        return bookId;
     }
 
     public static class Builder
