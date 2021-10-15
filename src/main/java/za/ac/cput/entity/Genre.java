@@ -24,6 +24,15 @@ public class Genre
                 '}';
     }
 
+    public String getGenreId()
+    {
+        return genreId;
+    }
+
+    public String getName() {
+        return name;
+    }
+
     public static class Builder
     {
         private String genreId,name;
