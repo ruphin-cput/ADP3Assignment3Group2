@@ -14,7 +14,7 @@ import java.util.Set;
 public class AuthorController
 {
     @Autowired //This means you are injecting the constructor into the application
-    private AuthorService authorService; //Issue found
+    private AuthorService authorService;
 /*
     @Autowired
     private BookLocationService bookLocationService;*/

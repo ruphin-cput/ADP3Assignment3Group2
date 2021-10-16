@@ -14,7 +14,7 @@ import za.ac.cput.entity.BookLocation;
 import za.ac.cput.factory.BookLocationFactory;
 
 import static org.junit.jupiter.api.Assertions.*;
-
+/*
 @TestMethodOrder(MethodOrderer.MethodName.class)
 class BookLocationRepositoryTest
 {
@@ -59,5 +59,5 @@ class BookLocationRepositoryTest
         System.out.println("Showing all: ");
         System.out.println(repository.getAll());
     }
-}
+}*/
 

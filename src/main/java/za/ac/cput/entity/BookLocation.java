@@ -1,6 +1,8 @@
 package za.ac.cput.entity;
 
 
+import javax.persistence.*;
+
 /**
  * bookLocation.java
  * This code represents an entity using the builder pattern
@@ -8,14 +10,29 @@ package za.ac.cput.entity;
  * Date: 10 June 2021
  */
 
+@Entity
 public class BookLocation
 {
-    private String shelfLocation, genreId;
+    @Id
+    private String shelfLocation;
+    @Id
+    private String genreId;
+    //@OneToOne
+    //@PrimaryKeyJoinColumn(name="shelfNumber",referencedColumnName="shelfNumber")
+    private Book book;
+    //@OneToMany
+    //@PrimaryKeyJoinColumn(name="genreId",referencedColumnName="genreId")
+    private Genre genre;
 
     private BookLocation(Builder builder)
     {
         this.shelfLocation = builder.shelfLocation;
         this.genreId = builder.genreId;
+    }
+
+    //Default Constructor
+    public BookLocation() {
+
     }
 
     //Getters

@@ -1,5 +1,8 @@
 package za.ac.cput.entity;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
 /**
  * author.java
  * This code represents an entity using the builder pattern
@@ -8,10 +11,12 @@ package za.ac.cput.entity;
  */
 
 //This package "entity/domain - is the blueprint part of things (skeleton)
-
+@Entity
 public class Author
 {
-    private String authorId, name, surname, bio;
+    @Id
+    private String authorId;
+    private String name, surname, bio;
 
     private Author(Builder builder)
     {
@@ -19,6 +24,11 @@ public class Author
         this.name = builder.name;
         this.surname = builder.surname;
         this.bio = builder.bio;
+    }
+
+    //Default Constructor
+    public Author() {
+
     }
 
     @Override
@@ -52,6 +62,7 @@ public class Author
     {
         return bio;
     }//End of getters
+
 
     public static class Builder
     {

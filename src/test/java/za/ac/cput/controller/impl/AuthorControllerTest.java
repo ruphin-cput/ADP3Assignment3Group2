@@ -66,7 +66,7 @@ class AuthorControllerTest
     {
         String url = BASE_URL + "/delete/" + author.getAuthorId(); //using the url and passing through the id I would like to delete
         System.out.println("URL: " + url);
-        restTemplate.delete(url);
+        restTemplate.delete(url); //++++ Need to make this work because it is not deleting, but it states that the test has past, but nothing is removed from the database
     }
 
     @Test

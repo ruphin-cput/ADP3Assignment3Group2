@@ -10,24 +10,19 @@ package za.ac.cput.service.impl;
 import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
 import za.ac.cput.entity.BookLocation;
 import za.ac.cput.factory.BookLocationFactory;
-import org.junit.jupiter.api.MethodOrderer;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.TestMethodOrder;
-import za.ac.cput.entity.Author;
-import za.ac.cput.entity.BookLocation;
-import za.ac.cput.factory.AuthorFactory;
-import za.ac.cput.factory.BookLocationFactory;
-import za.ac.cput.repository.AuthorRepository;
-import za.ac.cput.repository.BookLocationRepository;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 @TestMethodOrder(MethodOrderer.MethodName.class)
+@SpringBootTest
 class BookLocationServiceTest
 {
-    private static BookLocationRepository service = BookLocationRepository.getRepository();
+    @Autowired
+    private static BookLocationService service;
     private static BookLocation bookLocation = BookLocationFactory. createBookLocation("4", "8");
 
     @Test
@@ -49,6 +44,7 @@ class BookLocationServiceTest
     @Test
     void update()
     {
+        BookLocation old = service.read(""); // Need to get an Id from the database (workbench)
         BookLocation updated = new BookLocation.Builder().copy(bookLocation).setGenreId("10").build();
         assertEquals(updated,service.update(updated));
         System.out.println("Updated: " + updated);
@@ -57,7 +53,7 @@ class BookLocationServiceTest
     @Test
     void delete()
     {
-        boolean success = service.delete(bookLocation.getGenreId());
+        boolean success = service.delete(""); // Need to get an Id from the database (workbench)
         assertTrue(success);
         System.out.println("Delete: " + success);
     }

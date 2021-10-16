@@ -20,7 +20,7 @@ class BookLocationFactoryTest
     @Test
     public void createBookLocation()
     {
-        BookLocation bookLocation = BookLocationFactory.createBookLocation(" ", " ");
+        BookLocation bookLocation = BookLocationFactory.createBookLocation("4", " ");//++++ need to get the id of the two id tables
         System.out.println(bookLocation);
         assertEquals(bookLocation);
     }

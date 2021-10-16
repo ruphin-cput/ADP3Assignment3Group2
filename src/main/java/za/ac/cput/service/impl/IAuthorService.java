@@ -3,6 +3,7 @@ package za.ac.cput.service.impl;
 import za.ac.cput.entity.Author;
 import za.ac.cput.service.IService;
 
+import java.util.Optional;
 import java.util.Set;
 
 /**
@@ -15,4 +16,5 @@ import java.util.Set;
 public interface IAuthorService extends IService<Author, String>
 {
     public Set<Author> getAll();
+
 }

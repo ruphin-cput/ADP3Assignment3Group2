@@ -1,4 +1,8 @@
 package za.ac.cput.service;
+
+import java.util.Optional;
+import java.util.OptionalInt;
+
 /*  IService.java
     Service interface
     Author: Adriaan Burger(219014868)

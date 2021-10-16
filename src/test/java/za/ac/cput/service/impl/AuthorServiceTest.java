@@ -10,16 +10,19 @@ package za.ac.cput.service.impl;
 import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
 import za.ac.cput.entity.Author;
 import za.ac.cput.factory.AuthorFactory;
-import za.ac.cput.repository.AuthorRepository;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 @TestMethodOrder(MethodOrderer.MethodName.class)
+@SpringBootTest
 class AuthorServiceTest
 {
-    private static AuthorRepository service = AuthorRepository.getRepository();
+    @Autowired
+    private static AuthorService service;
     private static Author author = AuthorFactory.createAuthor("Nelson", "Mandela", "Nelson Mandela, in full Nelson Rolihlahla Mandela, byname Madiba," +
             " (born July 18, 1918, Mvezo, South Africa—died December 5, 2013, Johannesburg), Black nationalist and the first Black president of South Africa (1994–99). " +
             " His negotiations in the early 1990s with South African Pres.");
@@ -43,6 +46,7 @@ class AuthorServiceTest
     @Test
     void c_update()
     {
+        Author old = service.read(""); // Need to get an Id from the database (workbench)
         Author updated = new Author.Builder().copy(author).setName("Rolihlahla").build();
         assertEquals(updated,service.update(updated));
         System.out.println("Updated: " + updated);
@@ -51,7 +55,7 @@ class AuthorServiceTest
     @Test
     void e_delete()
     {
-        boolean success = service.delete(author.getAuthorId());
+        boolean success = service.delete(""); // Need to get an Id from the database (workbench)
         assertTrue(success);
         System.out.println("Deleted: " + success);
     }
