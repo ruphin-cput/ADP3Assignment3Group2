@@ -50,6 +50,13 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
                 .antMatchers(HttpMethod.PUT,"**/user/update").hasRole("ADMIN") // Only ADMINs would update users
                 .antMatchers(HttpMethod.DELETE,"**/user/delete/{id}").hasRole("ADMIN") // Only ADMINs would delete users
                 .antMatchers(HttpMethod.GET, "**/user/getAll").hasRole("ADMIN") // Only the ADMINs would have to view all users
+                .and()//from here, why didnt I get the grey tag next to the and()
+                .authorizeRequests()
+                .antMatchers(HttpMethod.POST,"**/author/create").hasRole("ADMIN") // Only the ADMINs can create new authors
+                .antMatchers(HttpMethod.GET, "**/author/read/{authorId}").hasRole("ADMIN")// Only the ADMINs would have to view specific users
+                .antMatchers(HttpMethod.PUT,"**/author/update").hasRole("ADMIN") // Only ADMINs would update authors
+                .antMatchers(HttpMethod.DELETE,"**/author/delete/{authorId}").hasRole("ADMIN") // Only ADMINs would delete authors
+                .antMatchers(HttpMethod.GET, "**/author/getAll").hasRole("ADMIN") // Only the ADMINs would have to view all author (to here)
                 .and()
                 .csrf().disable()
                 .formLogin().disable(); // This Disable is for if you dont use login forms for usernames and passwords

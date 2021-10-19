@@ -24,8 +24,12 @@ class AuthorControllerTest
             "in full Nelson Rolihlahla Mandela, byname Madiba, (born July 18, 1918, Mvezo, South Africa—died December 5, " +
             "2013, Johannesburg), Black nationalist and the first Black president of South Africa (1994–99). His negotiations " +
             "in the early 1990s with South African Pres."); //this is a author object and includes examples which will be used in the testing phase
+
+    public static String SECURITY_USERNAME="user";
+    public static String SECURITY_PASSWORD="password";
+
     @Autowired
-    private TestRestTemplate restTemplate;
+    private TestRestTemplate restTemplate;// "http://localhost:8080/library_management_systemdb/author" put this by the BASE_URL Melven
     private final String BASE_URL = "http://localhost:8080/author"; //this is a const and it should be in capital letters. This is the entry point into my author application. So we specify the BASE_URL.
 
     @Test
@@ -75,7 +79,9 @@ class AuthorControllerTest
         String url = BASE_URL + "/getall";
         HttpHeaders headers = new HttpHeaders();
         HttpEntity<String> entity = new HttpEntity<>(null, headers);
-        ResponseEntity<String> response = restTemplate.exchange(url, HttpMethod.GET, entity, String.class);
+        ResponseEntity<String> response = restTemplate
+                .withBasicAuth(SECURITY_USERNAME, SECURITY_PASSWORD)
+                .exchange(url, HttpMethod.GET, entity, String.class);
         System.out.println("Show All:");
         System.out.println(response);
         System.out.println(response.getBody());

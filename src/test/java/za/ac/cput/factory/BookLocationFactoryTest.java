@@ -6,7 +6,7 @@ package za.ac.cput.factory;
  * @author: Melven Johannes Booysen (219201277)
  * Date: 10 June 2021
  */
-
+/*
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
@@ -77,4 +77,4 @@ class BookLocationFactoryTest
     }
 
 
-}//*** End of test class ***
+}*///*** End of test class ***

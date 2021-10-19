@@ -11,17 +11,18 @@ import javax.persistence.*;
  */
 
 @Entity
+//@IdClass(Book.class) //do I need this or does book class need it.
 public class BookLocation
 {
     @Id
     private String shelfLocation;
     @Id
     private String genreId;
-    //@OneToOne
-    //@PrimaryKeyJoinColumn(name="shelfNumber",referencedColumnName="shelfNumber")
+    @OneToOne
+    @PrimaryKeyJoinColumn(name="shelfNumber",referencedColumnName="shelfNumber")
     private Book book;
-    //@OneToMany
-    //@PrimaryKeyJoinColumn(name="genreId",referencedColumnName="genreId")
+    @OneToMany
+    @PrimaryKeyJoinColumn(name="genreId",referencedColumnName="genreId")
     private Genre genre;
 
     private BookLocation(Builder builder)
