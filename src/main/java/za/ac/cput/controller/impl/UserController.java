@@ -14,10 +14,10 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-    @PostMapping
+    @PostMapping("/create")
     public User create(@RequestBody User user){
-        user = UserFactory.createUser(user.getName(), user.getSurname(), user.getCellphone(), user.getEmail(), user.getAddress());
-        return userService.create(user);
+        User newUser = UserFactory.createUser(user.getName(), user.getSurname(), user.getCellphone(), user.getEmail(), user.getAddress());
+        return userService.create(newUser);
     }
 
     @GetMapping("/read/{id}")
