@@ -44,7 +44,4 @@ public class UserLoginServiceTest {
         System.out.println("Showing all: ");
         System.out.println(service.getAll());
     }
-
-
-
 }

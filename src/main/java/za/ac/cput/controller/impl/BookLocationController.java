@@ -1,5 +1,5 @@
 package za.ac.cput.controller.impl;
-
+/*
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -11,11 +11,10 @@ import za.ac.cput.entity.Genre;
 import za.ac.cput.factory.BookLocationFactory;
 import za.ac.cput.service.impl.BookLocationService;
 import za.ac.cput.service.impl.BookService;
-/*
+
 @RestController
 @RequestMapping("/bookLocation")
-public class BookLocationController
-{
+public class BookLocationController {
     //We do this 3 way @autowired when it is a 'bridge entity' and we trying to see if the the values are there.
     @Autowired
     private BookService bookService;
@@ -33,22 +32,20 @@ public class BookLocationController
         boolean genreExist = false;
 
         Book book = bookService.read(BookLocation.getShelfNumber()); //checking if shelfNumber exist, if 'yes' than = true, if 'no' than = false. (if its yes it will proceed to store the object into the database)
-        if(book != null)
-        {
+        if (book != null) {
             bookExist = true;
         }
         Genre genre = genreService.read(bookLocation.getGenreId());  //checking if genreId exist, if 'yes' than = true, if 'no' than = false. (if its yes it will proceed to store the object into the database)
-        if(genre != null)
-        {
+        if (genre != null) {
             genreExist = true;
         }
 
-        if(bookExist && genreExist) // Now we compare the two queries above, if they both exists than it will create the bookLocation object
+        if (bookExist && genreExist) // Now we compare the two queries above, if they both exists than it will create the bookLocation object
         {
             return bookLocationService.create(bookLocation);
-        }
-        else
+        } else
             return BookLocationFactory.createBookLocation(" ", " ");
     }
-}
-*/
+
+}*/
+

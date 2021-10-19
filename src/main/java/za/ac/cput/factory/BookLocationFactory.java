@@ -15,8 +15,8 @@ public class BookLocationFactory
 {
     public static BookLocation createBookLocation (String shelfLocation, String genreId)
     {
-        genreId = GenericHelper.generateId();
-        shelfLocation = GenericHelper.generateId();
+        //genreId = GenericHelper.generateId();
+        //shelfLocation = GenericHelper.generateId();
 
         //creating instance
         BookLocation bookLocation = new BookLocation.Builder()
@@ -26,5 +26,4 @@ public class BookLocationFactory
 
         return bookLocation;
     }
-
 }//*** End of class

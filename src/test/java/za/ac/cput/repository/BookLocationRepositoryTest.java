@@ -1,5 +1,12 @@
 package za.ac.cput.repository;
 
+/**
+ * bookLocationRepositoryTest.java
+ *
+ * @author: Melven Johannes Booysen (219201277)
+ * Date: 25 August 2021
+ */
+
 import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
@@ -7,7 +14,7 @@ import za.ac.cput.entity.BookLocation;
 import za.ac.cput.factory.BookLocationFactory;
 
 import static org.junit.jupiter.api.Assertions.*;
-
+/*
 @TestMethodOrder(MethodOrderer.MethodName.class)
 class BookLocationRepositoryTest
 {
@@ -52,5 +59,5 @@ class BookLocationRepositoryTest
         System.out.println("Showing all: ");
         System.out.println(repository.getAll());
     }
-}
+}*/
 

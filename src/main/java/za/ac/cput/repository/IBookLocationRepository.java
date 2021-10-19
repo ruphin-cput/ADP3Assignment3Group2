@@ -10,7 +10,7 @@ import java.util.Set;
  * @author: Melven Johannes Booysen (219201277)
  * Date: 25 August 2021
  */
-
+@Deprecated
 public interface IBookLocationRepository extends IRepository<BookLocation, String>
 {
     public Set<BookLocation> getAll();

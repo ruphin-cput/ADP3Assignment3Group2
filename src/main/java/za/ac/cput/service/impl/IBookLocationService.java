@@ -16,3 +16,4 @@ public interface IBookLocationService extends IService<BookLocation, String>
 {
     public Set<BookLocation> getAll();
 }
+
