@@ -1,12 +1,16 @@
 package za.ac.cput.entity;
+import javax.persistence.Entity;
+import javax.persistence.Id;
 /*
  * Genre.java
  * This code represents an entity using the builder pattern
  * @author Plamedie Bitota Bukasa (219260532)
  * Date: 10th June 2021
  */
+@Entity
 public class BookGenre
 {
+    @Id
     private String bookGenreId,genreId,bookId;
 
     private BookGenre( Builder builder)
@@ -14,6 +18,10 @@ public class BookGenre
         this.bookGenreId= builder.bookGenreId;
         this.genreId=builder.genreId;
         this.bookId=builder.bookId;
+
+    }
+
+    public BookGenre() {
 
     }
 

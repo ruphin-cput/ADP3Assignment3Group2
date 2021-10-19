@@ -1,14 +1,22 @@
 package za.ac.cput.entity;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import java.io.Serializable;
+
 /*  Book.java
     Book entity
     Author: Taahir Boltman(218022972)
     Date: 10 June 2021
  */
+@Entity
+public class Book implements Serializable {
+    @Id
+    private String bookId;
+    private String shelfNumber, authorName, name, desc, keywords;
 
-public class Book {
-    private String bookId, shelfNumber, authorName, name, desc, keywords;
     private Book(){}
+
     private Book(bookBuilder bookBuilder) {
         this.bookId= bookBuilder.bookId;
         this.shelfNumber= bookBuilder.shelfNumber;
@@ -102,4 +110,8 @@ public class Book {
             return this;
         }
     }
+
+
 }
+
+

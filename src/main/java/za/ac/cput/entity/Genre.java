@@ -1,14 +1,17 @@
 package za.ac.cput.entity;
+import javax.persistence.Entity;
+import javax.persistence.Id;
 /**
  * Genre.java
  * This code represents an entity using the builder pattern
  * @author Plamedie Bitota Bukasa (219260532)
  * Date: 10th June 2021
  */
-
+@Entity
 public class Genre
 
 {
+    @Id
     private String genreId,name;
 
     private Genre(Builder builder)
@@ -16,6 +19,11 @@ public class Genre
         this.genreId= builder.genreId;
         this.name= builder.name;
     }
+
+    public Genre() {
+
+    }
+
     @Override
     public String toString() {
         return "Builder{" +

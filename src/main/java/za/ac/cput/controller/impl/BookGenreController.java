@@ -19,7 +19,8 @@ import java.util.Set;
 
 
         @PostMapping("/create")
-        public BookGenre create(@RequestBody BookGenre bookGenre) {
+        public BookGenre create(@RequestBody BookGenre bookGenre)
+        {
             bookGenre = BookGenreFactory.createBookGenre();
             return bookGenreService.create(bookGenre);
         }
