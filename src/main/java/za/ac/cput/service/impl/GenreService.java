@@ -1,11 +1,12 @@
 package za.ac.cput.service.impl;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import za.ac.cput.service.impl.IGenreService;
 import za.ac.cput.entity.Genre;
 import za.ac.cput.repository.GenreRepository;
 
 import java.util.Set;
+import java.util.stream.Collectors;
 
 /**  GenreService.java
  Genre Service implementation
@@ -14,31 +15,42 @@ import java.util.Set;
  */
 @Service
 public class GenreService implements IGenreService {
-    private static za.ac.cput.service.impl.GenreService service = null;
-    private GenreRepository repository = null;
 
+    private static GenreService service=null;
+    @Autowired
+    private GenreRepository repository;
 
-    private GenreService(){ this.repository = GenreRepository.getRepository();}
+    @Override
+    public Genre create(Genre genre) {  return this.repository.save(genre); }
 
-    public static za.ac.cput.service.impl.GenreService getService(){
-        if(service == null){
-            service = new za.ac.cput.service.impl.GenreService();
-        }
-        return service;
+    @Override
+    public Genre read(String GenreId) {
+        return this.repository
+                .findById(GenreId)
+                .orElse(null);
     }
 
     @Override
-    public Genre create(Genre genre) { return this.repository.create(genre);  }
+    public Genre update(Genre genre) {
+        if(this.repository.existsById(genre.getGenreId()))
+            return this.repository.save(genre);
+        return null;
+    }
 
     @Override
-    public Genre read(String genreId) { return this.repository.read(genreId); }
+    public boolean delete(String GenreId) {
+        this.repository.deleteById(GenreId);
+        if(this.repository.existsById(GenreId))
+            return false;
+        else
+            return true;
+    }
 
     @Override
-    public Genre update(Genre genre ) {  return this.repository.update(genre);  }
-
-    @Override
-    public boolean delete(String genreId) {  return this.repository.delete(genreId); }
-
-    @Override
-    public Set<Genre> getAll() {   return this.repository.getAll();  }
+    public Set<Genre> getAll() {
+        return this.repository
+                .findAll()
+                .stream()
+                .collect(Collectors.toSet());
+    }
 }
