@@ -1,5 +1,6 @@
 package za.ac.cput.entity;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
@@ -16,7 +17,8 @@ public class Author
 {
     @Id
     private String authorId;
-    private String name, surname, bio;
+    private String name, surname;
+    private String bio;
 
     private Author(Builder builder)
     {

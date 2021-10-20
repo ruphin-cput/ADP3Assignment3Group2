@@ -12,7 +12,9 @@ public class Genre
 
 {
     @Id
-    private String genreId,name;
+    private String genreId; //Added correction
+
+    private String name;
 
     private Genre(Builder builder)
     {

@@ -1,5 +1,6 @@
 package za.ac.cput.entity;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import java.io.Serializable;
@@ -13,9 +14,14 @@ import java.io.Serializable;
 public class Book implements Serializable {
     @Id
     private String bookId;
-    private String shelfNumber, authorName, name, desc, keywords;
+    private String shelfNumber;
+    private String authorName;
+    private String name;
+    @Column(name="book_description") // You used a reserved keyword which caused issues, but is resolved.
+    private String desc;
+    private String keywords;
 
-    private Book(){}
+    public Book(){}
 
     private Book(bookBuilder bookBuilder) {
         this.bookId= bookBuilder.bookId;

@@ -15,9 +15,6 @@ public class AuthorController
 {
     @Autowired //This means you are injecting the constructor into the application
     private AuthorService authorService;
-/*
-    @Autowired
-    private BookLocationService bookLocationService;*/
 
     @PostMapping("/create")
     public Author create(@RequestBody Author author) {

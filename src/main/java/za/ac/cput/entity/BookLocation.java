@@ -11,24 +11,33 @@ import javax.persistence.*;
  */
 
 @Entity
-//@IdClass(Book.class) //do I need this or does book class need it.
+@IdClass(BookLocationId.class) //do I need this or does book class need it.
 public class BookLocation
 {
+    @EmbeddedId
+    private BookLocationId bookLocationId;
     @Id
+    @Column(name="bl_shelf_location", insertable = false, updatable = false)
     private String shelfLocation;
     @Id
+    @Column(name="bl_genre_id", insertable = false, updatable = false)
     private String genreId;
+
     @OneToOne
-    @PrimaryKeyJoinColumn(name="shelfNumber",referencedColumnName="shelfNumber")
-    private Book book;
-    @OneToMany
-    @PrimaryKeyJoinColumn(name="genreId",referencedColumnName="genreId")
+    @JoinColumn(name="genreId", insertable = false, updatable = false)
     private Genre genre;
+
+    @OneToOne
+    @JoinColumn(name="shelfNumber", insertable = false, updatable = false)
+    private Book book;
 
     private BookLocation(Builder builder)
     {
-        this.shelfLocation = builder.shelfLocation;
+        this.bookLocationId = new BookLocationId();
+        this.bookLocationId.setShelfLocation(builder.shelfLocation);
+        this.bookLocationId.setGenreId(builder.genreId);
         this.genreId = builder.genreId;
+        this.shelfLocation = builder.shelfLocation;
     }
 
     //Default Constructor
@@ -37,24 +46,26 @@ public class BookLocation
     }
 
     //Getters
+    public BookLocationId getBookLocationId()
+    {
+        return bookLocationId;
+    }
+
     public String getShelfLocation()
     {
-        return shelfLocation;
+        return bookLocationId.getShelfLocation();
     }
 
     public String getGenreId()
     {
-        return genreId;
+        return bookLocationId.getGenreId();
     }//End of getters
 
-    /*public boolean add(BookLocation bookLocation)
-    {
-
-    }*/
 
     public static class Builder
     {
         private String shelfLocation, genreId;
+        private BookLocationId bookLocationId;
 
         //Setters
         public Builder setShelfLocation(String shelfLocation)
@@ -69,6 +80,11 @@ public class BookLocation
             return this;
         }//End of setters
 
+        public Builder setBookLocationId(BookLocationId bookLocationId) {
+            this.bookLocationId = bookLocationId;
+            return this;
+        }
+
         public BookLocation build()
         {
             return new BookLocation(this);
@@ -76,8 +92,8 @@ public class BookLocation
 
         public Builder copy(BookLocation bookLocation)
         {
-            this.shelfLocation = bookLocation.shelfLocation;
-            this.genreId = bookLocation.genreId;
+            this.shelfLocation = bookLocation.getBookLocationId().getShelfLocation();
+            this.genreId = bookLocation.getBookLocationId().getGenreId();
 
             return this;
         }
@@ -87,8 +103,8 @@ public class BookLocation
     public String toString()
     {
         return "BookLocation{" +
-                "shelfLocation='" + shelfLocation + '\'' +
-                ", genreId='" + genreId + '\'' +
+                "shelfLocation='" + bookLocationId.getShelfLocation() + '\'' +
+                ", genreId='" + bookLocationId.getGenreId() + '\'' +
                 '}';
     }
 

@@ -1,10 +1,12 @@
 package za.ac.cput.service.impl;
 
+import org.springframework.stereotype.Service;
 import za.ac.cput.entity.Book;
 import za.ac.cput.repository.BookRepository;
 
 import java.util.*;
 
+@Service
 public class BookService implements IBookService{
     private static BookService service = null;
     private BookRepository repository = null;
