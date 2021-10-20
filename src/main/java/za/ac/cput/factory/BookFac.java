@@ -16,7 +16,7 @@ public class BookFac {
         String bookId = GenericHelper.generateId();
 
         Book book = new Book.bookBuilder()
-                .setBookId(bookId)
+              .setBookId(bookId)
                 .setShelfNumber(shelfNumber)
                 .setAuthorName(authorname)
                 .setName(name)
@@ -25,5 +25,8 @@ public class BookFac {
                 .build();
 
         return book;
+
+
     }
 }
+

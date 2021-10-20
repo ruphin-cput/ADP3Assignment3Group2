@@ -22,18 +22,18 @@ public class BookContoller {
     //@RequestMapping(value = "/create", method = RequestMethod.POST)
     @PostMapping("/create")
     public Book create(@RequestBody Book book){
-        Book newBook = BookFac.createBook(book.getShelfNumber(), book.getAuthorName(), book.getName(), book.getDesc(), book.getKeywords());
-        return bookService.create(newBook);
+        book = BookFac.createBook(book.getShelfNumber(), book.getAuthorName(), book.getName(), book.getDesc(), book.getKeywords());
+        return bookService.create(book);
     }
 
     @GetMapping("/read/{id}")
     public Book read(@PathVariable String bookId) {
-        return BookService.getService().read(bookId);
+        return bookService.read(bookId);
     }
 
     @PutMapping("/update")
     public Book update(@RequestBody Book book){
-        return BookService.getService().update(book);
+        return bookService.update(book);
     }
 
     @DeleteMapping("/delete/{id}")
@@ -43,7 +43,7 @@ public class BookContoller {
 
     @GetMapping("/getall")
     public Set<Book> getAll(){
-        return BookService.getService().getAll();
+        return bookService.getAll();
     }
 
 }

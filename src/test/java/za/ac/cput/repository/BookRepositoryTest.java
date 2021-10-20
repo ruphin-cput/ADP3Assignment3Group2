@@ -1,5 +1,8 @@
 package za.ac.cput.repository;
-
+/*  BookRepositoryTest.java
+    Book Repository Test
+    Author: Taahir Boltman(218022972)
+ */
 import org.junit.jupiter.api.Test;
 import za.ac.cput.entity.Book;
 import za.ac.cput.factory.BookFac;
@@ -7,8 +10,8 @@ import za.ac.cput.factory.BookFac;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class BookRepositoryTest {
-    private static BookRepository repository = BookRepository.getRepository();
-    private static Book book = BookFac.createBook("4","T.Boltman","How many Stars in the sky","About Stars","Stars, sky");
+  /* private static BookRepository repository = BookRepository.getRepository();
+   private static Book book = BookFac.createBook("4","T.Boltman","How many Stars in the sky","About Stars","Stars, sky");
 
     @Test
     void create(){
@@ -43,4 +46,9 @@ public class BookRepositoryTest {
         System.out.println("Showing all: ");
         System.out.println(repository.getAll());
     }
+
+
+   */
+
+
 }
