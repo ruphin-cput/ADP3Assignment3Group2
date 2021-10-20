@@ -1,12 +1,10 @@
 package za.ac.cput.repository;
 
+import org.springframework.data.jpa.repository.JpaRepository;
 import za.ac.cput.entity.UserLogin;
 
-import java.util.HashSet;
-import java.util.*;
-
-public class UserLoginRepository implements IUserLoginRepository{
-    private static UserLoginRepository repository = null;
+public interface UserLoginRepository extends JpaRepository<UserLogin, String> {
+    /*private static UserLoginRepository repository = null;
     private Set<UserLogin> userloginDB = null;
 
     private UserLoginRepository(){
@@ -21,7 +19,7 @@ public class UserLoginRepository implements IUserLoginRepository{
     }
 
     @Override
-    public UserLogin create(UserLogin userLogin) {
+    public UserLogin Create(UserLogin userLogin) {
         boolean success = userloginDB.add(userLogin);
         if(!success)
             return null;
@@ -29,7 +27,7 @@ public class UserLoginRepository implements IUserLoginRepository{
     }
 
     @Override
-    public UserLogin read(String userId) {
+    public UserLogin Read(String userId) {
         for(UserLogin u: userloginDB)
         {
             if(u.getUserId().equals(userId)){
@@ -40,8 +38,8 @@ public class UserLoginRepository implements IUserLoginRepository{
     }
 
     @Override
-    public UserLogin update(UserLogin userLogin) {
-        UserLogin oldUser = read(userLogin.getUserId());
+    public UserLogin Update(UserLogin userLogin) {
+        UserLogin oldUser = Read(userLogin.getUserId());
         if(oldUser != null) {
             userloginDB.remove(oldUser);
             userloginDB.add(userLogin);
@@ -51,8 +49,8 @@ public class UserLoginRepository implements IUserLoginRepository{
     }
 
     @Override
-    public boolean delete(String userId) {
-        UserLogin UsertoDelete = read(userId);
+    public boolean Delete(String userId) {
+        UserLogin UsertoDelete = Read(userId);
         if(UsertoDelete == null)
         return false;
         userloginDB.remove(UsertoDelete);
@@ -63,4 +61,6 @@ public class UserLoginRepository implements IUserLoginRepository{
     public Set<UserLogin> getAll() {
         return userloginDB;
     }
+
+     */
 }
