@@ -10,8 +10,12 @@ import za.ac.cput.entity.Book;
 import za.ac.cput.util.GenericHelper;
 
 public class BookFac {
-    public static Book createBook(String shelfNumber, String authorname, String name,
-                                  String desc, String keywords){
+    public static Book createBook(String shelfNumber, String authorname, String bookName,
+                                  String bookDescription, String keywords){
+
+        if(shelfNumber.isEmpty() || authorname.isEmpty() || bookName.isEmpty() || bookDescription.isEmpty() || keywords.isEmpty()){
+            return null;
+        }
 
         String bookId = GenericHelper.generateId();
 
@@ -19,8 +23,8 @@ public class BookFac {
               .setBookId(bookId)
                 .setShelfNumber(shelfNumber)
                 .setAuthorName(authorname)
-                .setName(name)
-                .setDesc(desc)
+                .setbookName(bookName)
+                .setbookDescription(bookDescription)
                 .setKeywords(keywords)
                 .build();
 
