@@ -1,6 +1,7 @@
 package za.ac.cput.repository;
 
 import za.ac.cput.entity.BookLocation;
+import za.ac.cput.entity.BookLocationId;
 
 import java.util.Set;
 
@@ -11,7 +12,7 @@ import java.util.Set;
  * Date: 25 August 2021
  */
 @Deprecated
-public interface IBookLocationRepository extends IRepository<BookLocation, String>
+public interface IBookLocationRepository extends IRepository<BookLocation, BookLocationId>
 {
     public Set<BookLocation> getAll();
 }

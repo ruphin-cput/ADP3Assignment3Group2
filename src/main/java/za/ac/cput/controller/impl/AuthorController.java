@@ -15,9 +15,6 @@ public class AuthorController
 {
     @Autowired //This means you are injecting the constructor into the application
     private AuthorService authorService;
-/*
-    @Autowired
-    private BookLocationService bookLocationService;*/
 
     @PostMapping("/create")
     public Author create(@RequestBody Author author) {
@@ -43,16 +40,16 @@ public class AuthorController
         return authorService.delete(authorId);
     }
 
-    @GetMapping("/getall")
+    @GetMapping("/getAll") //Might need to change it to getall if it doesnt return the data
+    @ResponseBody
     public Set<Author> getAll()
     {
         return authorService.getAll();
     }
 
-    @GetMapping("/getallwitha") //The new method created in AuthorService
+    @GetMapping("/getAllAuthorsBeginningWithA") //The new method created in AuthorService
     public Set<Author> authorWithA()
     {
         return authorService.getAllAuthorsBeginningWithA();
     }
-
 }

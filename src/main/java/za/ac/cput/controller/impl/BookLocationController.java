@@ -1,5 +1,5 @@
 package za.ac.cput.controller.impl;
-/*
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -11,6 +11,7 @@ import za.ac.cput.entity.Genre;
 import za.ac.cput.factory.BookLocationFactory;
 import za.ac.cput.service.impl.BookLocationService;
 import za.ac.cput.service.impl.BookService;
+import za.ac.cput.service.impl.GenreService;
 
 @RestController
 @RequestMapping("/bookLocation")
@@ -23,7 +24,7 @@ public class BookLocationController {
     private BookLocationService bookLocationService;
 
     @Autowired
-    private GenreService genreService; //its red because the member in charge didnt create it.
+    private GenreService genreService;
 
     @PostMapping("/create")
     public BookLocation create(@RequestBody BookLocation bookLocation) //We checking if bookLocation is going to add the two parameters, which is genreId & shelfLocation
@@ -31,7 +32,7 @@ public class BookLocationController {
         boolean bookExist = false;
         boolean genreExist = false;
 
-        Book book = bookService.read(BookLocation.getShelfNumber()); //checking if shelfNumber exist, if 'yes' than = true, if 'no' than = false. (if its yes it will proceed to store the object into the database)
+        Book book = bookService.read(bookLocation.getShelfLocation()); //checking if shelfNumber exist, if 'yes' than = true, if 'no' than = false. (if its yes it will proceed to store the object into the database)
         if (book != null) {
             bookExist = true;
         }
@@ -47,5 +48,5 @@ public class BookLocationController {
             return BookLocationFactory.createBookLocation(" ", " ");
     }
 
-}*/
+}
 

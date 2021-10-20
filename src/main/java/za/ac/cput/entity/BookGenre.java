@@ -1,6 +1,6 @@
 package za.ac.cput.entity;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
+
 /*
  * Genre.java
  * This code represents an entity using the builder pattern
@@ -11,14 +11,21 @@ import javax.persistence.Id;
 public class BookGenre
 {
     @Id
-    private String bookGenreId,genreId,bookId;
+    private String bookGenreId;
+    private String genreId;
+    private String bookId;
+
+    @OneToOne
+    private Genre genre;
+
+    @OneToOne
+    private Book book;
 
     private BookGenre( Builder builder)
     {
         this.bookGenreId= builder.bookGenreId;
         this.genreId=builder.genreId;
         this.bookId=builder.bookId;
-
     }
 
     public BookGenre() {

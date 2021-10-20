@@ -7,7 +7,6 @@ package za.ac.cput.factory;
  * Date: 10 June 2021
  */
 
-//private String shelfLocation, genreId;
 import za.ac.cput.entity.BookLocation;
 import za.ac.cput.util.GenericHelper;
 

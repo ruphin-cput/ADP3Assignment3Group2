@@ -1,6 +1,7 @@
 package za.ac.cput.service.impl;
 
 import za.ac.cput.entity.BookLocation;
+import za.ac.cput.entity.BookLocationId;
 import za.ac.cput.service.IService;
 
 import java.util.Set;
@@ -12,7 +13,7 @@ import java.util.Set;
  * Date: 25 August 2021
  */
 
-public interface IBookLocationService extends IService<BookLocation, String>
+public interface IBookLocationService extends IService<BookLocation, BookLocationId>
 {
     public Set<BookLocation> getAll();
 }

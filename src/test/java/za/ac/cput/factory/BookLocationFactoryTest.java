@@ -76,5 +76,4 @@ class BookLocationFactoryTest
         fail("Shouldn't fail");
     }
 
-
 }//*** End of test class ***
