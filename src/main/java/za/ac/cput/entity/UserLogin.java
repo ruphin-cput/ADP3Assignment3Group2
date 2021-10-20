@@ -1,14 +1,15 @@
 package za.ac.cput.entity;
 
-/*  UserLogin.java
-    User Login entity
-    Author: Taahir Boltman(218022972)
-    Date: 10 June 2021
- */
+import javax.persistence.Entity;
+import javax.persistence.Id;
 
+@Entity
 public class UserLogin {
-    private String userId, userName, password;
+    @Id
+    private String userId;
+    private String userName, password;
 
+    private UserLogin(){}
 
     private UserLogin(Builder builder) {
         this.userId = builder.userId;
@@ -66,9 +67,4 @@ public class UserLogin {
             return this;
         }
     }
-
-
-
-
 }
-
