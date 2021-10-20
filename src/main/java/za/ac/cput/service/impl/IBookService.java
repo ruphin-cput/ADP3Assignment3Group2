@@ -1,6 +1,8 @@
-
 package za.ac.cput.service.impl;
-
+/*  IBookService.java
+    Book Service Interface
+    Author: Taahir Boltman(218022972)
+ */
 import za.ac.cput.entity.Book;
 import za.ac.cput.service.IService;
 

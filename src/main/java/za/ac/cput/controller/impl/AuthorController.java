@@ -41,6 +41,7 @@ public class AuthorController
     }
 
     @GetMapping("/getAll") //Might need to change it to getall if it doesnt return the data
+    @ResponseBody
     public Set<Author> getAll()
     {
         return authorService.getAll();
