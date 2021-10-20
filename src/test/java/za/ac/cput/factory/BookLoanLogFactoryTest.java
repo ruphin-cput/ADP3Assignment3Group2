@@ -1,13 +1,11 @@
 package za.ac.cput.factory;
 
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import za.ac.cput.entity.BookLoanLog;
-import org.junit.jupiter.api.Timeout;
 
-import java.util.concurrent.TimeUnit;
+import java.text.SimpleDateFormat;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 /*
     Author: Ruphin Bolonda
@@ -16,35 +14,20 @@ import static org.junit.jupiter.api.Assertions.*;
  */
 
 class BookLoanLogFactoryTest {
-    @Test
-    public void createBookLoanLog(){
-        BookLoanLog bookLoanLog1 = BookLoanLogFactory.createBookLoanLog("11/06/2021",
-                                                            "13/06/2021",false);
-        BookLoanLog bookLoanLog2 = bookLoanLog1;
-        assertEquals(bookLoanLog1,bookLoanLog2);
-    }
-    @Test
-    public void testIfObjectsIdentity() {
 
-        BookLoanLog bookLoanLog1 = BookLoanLogFactory.createBookLoanLog("11/06/2021",
-                "13/06/2021",false);
-        BookLoanLog bookLoanLog2 = bookLoanLog1;
-        assertSame(bookLoanLog1, bookLoanLog2);
-    }
+    private BookLoanLog bl1, bl2;
+    static SimpleDateFormat s1 = new SimpleDateFormat("yyyy-MM-ddHH:mm:ss");
+    static SimpleDateFormat s2 = new SimpleDateFormat("yyyy-MM-ddHH:mm:ss");
+    static String date1 = "2021-09-09";
+    static String date2 = "2021-09-09";
+
     @Test
-    @Timeout(value = 100, unit = TimeUnit.MILLISECONDS)
-    public void testDataAccessTimeout(){
-        BookLoanLog bookLoanLog1 = BookLoanLogFactory.createBookLoanLog("11/06/2021",
-                "13/06/2021",false);
+    void createBookLoanLog() {
+        bl1 = BookLoanLogFactory.createBookLoanLog(date1,date2,true);
+        bl1 = BookLoanLogFactory.createBookLoanLog(date1,date2,true);
+        System.out.println(bl1);
+        System.out.println(bl2);
+        assertNotNull(bl1);
     }
 
-    @Disabled
-    @Test
-    public void testCreateBookAlertBis(){
-
-        BookLoanLog bookLoanLog1 = BookLoanLogFactory.createBookLoanLog("11/06/2021",
-                "13/06/2021",false);
-        assertNotNull(bookLoanLog1);
-
-    }
 }
